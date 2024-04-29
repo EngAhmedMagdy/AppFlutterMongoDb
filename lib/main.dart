@@ -1,0 +1,34 @@
+import 'package:flutter/material.dart';
+
+import 'Users.dart';
+import 'Order.dart';
+import 'Signup.dart';
+import 'movies.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        useMaterial3: true,
+      ),
+      home: MoviesWidget(),
+      routes: {
+        //route name
+        "/Order":(context) => Order(),
+        "/Users":(context) => FutureBuilderExample(),
+        "/Movies":(context) => MoviesWidget(),
+      },
+    );
+  }
+}
+
